@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
+    // panneau qui affiche le menu
     public GameObject menuPanel;
-    public SceneController sceneLoader;
+    // nom de la scene pour quitter le jeu
+    public string sceneStart = "Start";
+
     private bool opened;
 
     /// <summary>
@@ -21,6 +24,7 @@ public class PauseMenu : MonoBehaviour
     /// </summary>
     void Update()
     {
+        // capture le bouton annuler pour ouvrir le menu
         if (Input.GetButtonDown("Cancel"))
             ToggleMenu();
 
@@ -57,9 +61,7 @@ public class PauseMenu : MonoBehaviour
     public void CloseMenu()
     {
         Time.timeScale = 1;
-        
         menuPanel.SetActive(false);
-
         opened = false;
     }
 
@@ -68,7 +70,7 @@ public class PauseMenu : MonoBehaviour
     /// </summary>
     public void Exit()
     {
-        sceneLoader.LoadScene("Start");
+        SceneManager.LoadScene(sceneStart);
     }
 
 }
