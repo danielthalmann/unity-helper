@@ -60,6 +60,7 @@ public class PauseMenu : MonoBehaviour
     /// </summary>
     public void CloseMenu()
     {
+        // relance le temps
         Time.timeScale = 1;
         menuPanel.SetActive(false);
         opened = false;

@@ -1,0 +1,1 @@
+# Script de création de capture d'écran
